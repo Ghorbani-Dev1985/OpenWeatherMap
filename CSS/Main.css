@@ -94,6 +94,23 @@
           outline-style: none;
       }
   }
+.flex{
+  display: flex;
+}
+#PlaceName{
+  height: 60px;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background-color: #dcfce7;
+  color: #10b981;
+  padding: 10px;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+}
   .button {
     color: var(--font-color);
     position: relative;
@@ -102,6 +119,7 @@
     font-weight: 700;
     transition: all 100ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
     box-shadow: var(--button-shadow);
+    font-size: 15px;
     
     &.button-link {
       color: #067CF8;
@@ -165,13 +183,19 @@
     fill: #067CF8;
     position: relative;
     z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
   }
-  
+  #MaxMinTemp{
+    font-size: 18px;
+  }
   .button-dial-spoke {
     background-color: rgba(96, 171, 254, 0.6);
     display: block;
     height: 2px;
-    width: 83%;
+    width: 100%;
     position: absolute;
     margin: 0 auto;
     z-index: 5;
@@ -192,6 +216,48 @@
     &:nth-child(6) {
       transform: rotate(150deg);
     }
+    &:nth-child(7) {
+      transform: rotate(180deg);
+      -webkit-transform: rotate(180deg);
+      -moz-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+      -o-transform: rotate(180deg);
+}
+&:nth-child(8) {
+  transform: rotate(210deg);
+  -webkit-transform: rotate(210deg);
+  -moz-transform: rotate(210deg);
+  -ms-transform: rotate(210deg);
+  -o-transform: rotate(210deg);
+}
+&:nth-child(9) {
+  transform: rotate(240deg);
+  -webkit-transform: rotate(240deg);
+  -moz-transform: rotate(240deg);
+  -ms-transform: rotate(240deg);
+  -o-transform: rotate(240deg);
+}
+&:nth-child(10) {
+  transform: rotate(270deg);
+  -webkit-transform: rotate(270deg);
+  -moz-transform: rotate(270deg);
+  -ms-transform: rotate(270deg);
+  -o-transform: rotate(270deg);
+}
+&:nth-child(11) {
+  transform: rotate(300deg);
+  -webkit-transform: rotate(300deg);
+  -moz-transform: rotate(300deg);
+  -ms-transform: rotate(300deg);
+  -o-transform: rotate(300deg);
+}
+&:nth-child(12) {
+  transform: rotate(330deg);
+  -webkit-transform: rotate(330deg);
+  -moz-transform: rotate(330deg);
+  -ms-transform: rotate(330deg);
+  -o-transform: rotate(330deg);
+}
   }
   
   .button-block {
