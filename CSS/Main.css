@@ -191,6 +191,7 @@
   #MaxMinTemp{
     font-size: 18px;
   }
+
   .button-dial-spoke {
     background-color: rgba(96, 171, 254, 0.6);
     display: block;
@@ -279,6 +280,18 @@
   }
   
   .flex-button-container {
-    display: flex;
+    display: none;
     justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+  
+  .flex-button-container img{
+    width: 45px;
+    height: 45px;
+    margin-bottom: 20px;
+  }
+  .WeatherDesc{
+    font-size: 13px;
+    color: #a1a1a1;
   }
