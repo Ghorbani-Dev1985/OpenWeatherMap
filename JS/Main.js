@@ -3,8 +3,7 @@ const PlaceNameInput = $.querySelector("#PlaceNameInput");
 const PlaceName = $.querySelector("#PlaceName");
 const ShowTemp = $.querySelector("#ShowTemp");
 const MaxMinTemp = $.querySelector("#MaxMinTemp");
-const WeatherIcon = $.querySelector("#WeatherIcon");
-const WeatherStatus = $.querySelector("#WeatherStatus");
+const ShowFullDate = $.querySelector("#ShowDate");
 const ShowInfoContainer = $.querySelector(".flex-button-container");
 // Api Info
 let apiData = {
@@ -20,13 +19,63 @@ function GetAllData() {
     .then((data) => {
       ShowData(data);
       console.log(data);
-    });
+    })
+    .catch((err) => {
+        ShowError()
+        console.log(err)
+    })
+    
+    
+    
+}
+// Date Function
+function ShowDate() {
+  let months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+  let days = [
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+    "Sunday",
+  ];
+  let now = new Date();
+  let day = days[now.getDay()];
+  let month = months[now.getMonth()];
+  let year = now.getFullYear();
+  let date = now.getDate();
+  return `${day} ${date} ${month} ${year}`;
+}
+
+function ShowError(){
+    PlaceName.style.backgroundColor = "#ffe4e6";
+    PlaceName.style.color = "#f43f5e";
+    PlaceName.innerHTML = `Data Unavailable`
 }
 
 function ShowData(data) {
+  PlaceNameInput.value = "";
+  PlaceName.style.backgroundColor = "";
+    PlaceName.style.color = "";
   PlaceName.style.display = "flex";
   ShowInfoContainer.style.display = "flex";
+  ShowFullDate.style.display = "flex";
   PlaceName.innerHTML = `${data.name} , ${data.sys.country}`;
+  ShowFullDate.innerHTML = ShowDate();
   ShowTemp.innerHTML = `${Math.floor(data.main.temp - 273.15)}&deg;C`;
   MaxMinTemp.innerHTML = `${Math.floor(
     data.main.temp_min - 273.15

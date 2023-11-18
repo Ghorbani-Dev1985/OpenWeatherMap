@@ -295,3 +295,10 @@
     font-size: 13px;
     color: #a1a1a1;
   }
+  #ShowDate{
+    display: none;
+    justify-content: center;
+    align-items: center;
+
+  }
+  
